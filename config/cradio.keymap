@@ -17,16 +17,15 @@
     layers = <0>; \
   };
 
-#define MACRO_STRINGIFY(x) #x
-#define MACRO(NAME, ...) \
-    NAME: NAME { \
-        label = MACRO_STRINGIFY(NAME); \
+#define MACRO(name, keys)                  \
+    name: name##_macro {                   \
+        label = #name;                     \
         compatible = "zmk,behavior-macro"; \
-        #binding-cells = <0>; \
-        wait-ms = <1>; \
-        tap-ms = <1>; \
-        bindings = __VA_ARGS__; \
-};
+        wait-ms = <30>;                     \
+        tap-ms = <30>;                      \
+        #binding-cells = <0>;              \
+        bindings = <keys>;                 \
+    };
 
 / {
     behaviors {
@@ -59,7 +58,6 @@
 //                ╰────────╯ ╰────────╯            
 
     combos { 
-        compatible: = "zmk,combos";
         COMBO(esc, &kp ESC, 16 17, 50)
         COMBO(eql, &kp EQUAL, 16 18, 40)
         COMBO(tab, &kp TAB, 17 18, 40)
