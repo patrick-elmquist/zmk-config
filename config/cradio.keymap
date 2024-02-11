@@ -17,14 +17,15 @@
     layers = <0>; \
   };
 
-#define MACRO(NAME, keys)                 \
-NAME: NAME##_macro {                      \
-    label          = #NAME;               \
-    compatible     = "zmk,behavior-macro";\
-    tap-ms         = <30>;                \
-    wait-ms        = <30>;                \
-    #binding-cells = <0>;                 \
-    bindings       = <keys>;              \
+#define MACRO_STRINGIFY(x) #x
+#define MACRO(NAME, ...) \
+    NAME: NAME { \
+        label = MACRO_STRINGIFY(NAME); \
+        compatible = "zmk,behavior-macro"; \
+        #binding-cells = <0>; \
+        wait-ms = <1>; \
+        tap-ms = <1>; \
+        bindings = __VA_ARGS__; \
 };
 
 / {
