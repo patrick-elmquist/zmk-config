@@ -14,7 +14,7 @@
 
 // Home row mods macro
 #define HRML(k1,k2,k3,k4) &ht LCTRL k1  &ht LALT k2  &ht LGUI k3  &ht LSHFT k4
-#define HRMR(k1,k2,k3,k4) &ht RSHFT k1  &ht RGUI k2  &ht LALT k3  &ht RCTRL k4
+#define HRMR(k1,k2,k3,k4) &ht RSHIFT k1  &ht RGUI k2  &ht LALT k3  &ht RCTRL k4
 
 #define COMBO(NAME, BINDINGS, KEYPOS, TIMEOUT) \
   combo_##NAME { \
@@ -51,7 +51,7 @@
         compatible = "zmk,conditional-layers";
         tri_layer {
             if-layers = <1 2>;
-            then-layer = <3>;
+            then-layer = <4>;
         };
     };
 
