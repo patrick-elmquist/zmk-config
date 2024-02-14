@@ -65,6 +65,7 @@
 //                ╰────────╯ ╰────────╯            
 
     combos { 
+        compatible = "zmk,combos";
         COMBO(esc, &kp ESC, 16 17, 50)
         COMBO(eql, &kp EQUAL, 16 18, 40)
         COMBO(tab, &kp TAB, 17 18, 40)
