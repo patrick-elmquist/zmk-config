@@ -87,7 +87,7 @@
         COMBO(arrow, &arrow, 27 28, 45)
         COMBO(not_equal, &not_equal, 6 7, 45)
         COMBO(and, &kp PIPE, 4 5, 45)
-        COMBO(and, &kp AMPS, 5 6, 45)
+        COMBO(or, &kp AMPS, 5 6, 45)
 
         COMBO(caps_word, &caps_word, 13 16, 45)
         COMBO(caps_word, &caps_word, 6 7 8, 45)
