@@ -33,7 +33,6 @@
         #binding-cells = <0>;              \
         bindings = <keys>;                 \
     };
-
 / {
     behaviors {
         ht: hold_tap {
@@ -44,6 +43,13 @@
             quick-tap-ms = <150>;
             require-prior-idle-ms = <100>;
             bindings = <&kp>, <&kp>;
+        };
+
+        um: umlaut {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LA(U)>, <&kp LA(U)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
 
@@ -74,7 +80,7 @@
         COMBO(cut, &kp LG(X), 21 23, 40)
         COMBO(undo, &kp LG(Z), 20 21, 40)
         
-        COMBO(arrow, &arrow, 20 21, 45)
+        COMBO(arrow, &arrow, 27 28, 45)
 
         COMBO(left_par, &kp LPAR, 11 12, 30)
         COMBO(right_par, &kp RPAR, 12 13, 30)
@@ -82,9 +88,13 @@
         COMBO(par_pair_in, &par_pair_in, 11 12 13, 30)
 
         COMBO(left_brace, &kp LBRC, 1 2, 45)
-        COMBO(right_brace, &kp LBRC, 1 2, 45)
+        COMBO(right_brace, &kp LBRC, 2 3, 45)
         COMBO(brace_pair, &brace_pair, 1 3, 45)
         COMBO(brace_pair_in, &brace_pair_in, 1 2 3, 45)
+
+        COMBO(swe_ao, &swe_ao, 10 19, 45)
+        COMBO(swe_ae, &swe_ae, 10 17, 45)
+        COMBO(swe_oe, &swe_oe, 17 19, 45)
     };
 
     macros {
@@ -94,6 +104,10 @@
         MACRO(par_pair_in, &kp LPAR &kp RPAR &kp LARW)
         MACRO(brace_pair, &kp LBRC &kp RBRC)
         MACRO(brace_pair_in, &kp LBRC &kp RBRC &kp LARW)
+        // TODO fix these
+        MACRO(swe_ao, &kp LA(A))
+        MACRO(swe_ae, &um &kp A)
+        MACRO(swe_oe, &um &kp O)
     };
 
     keymap {
