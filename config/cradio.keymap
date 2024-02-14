@@ -28,8 +28,8 @@
     name: name##_macro {                   \
         label = #name;                     \
         compatible = "zmk,behavior-macro"; \
-        wait-ms = <30>;                     \
-        tap-ms = <30>;                      \
+        wait-ms = <1>;                     \
+        tap-ms = <1>;                      \
         #binding-cells = <0>;              \
         bindings = <keys>;                 \
     };
@@ -61,6 +61,10 @@
         };
     };
 
+    &caps_word {
+        continue-list = <UNDERSCORE MINUS>;
+    };
+
 //                    KEY POSITIONS
 //
 //    ╭────────────────────╮ ╭────────────────────╮
@@ -81,6 +85,12 @@
         COMBO(undo, &kp LG(Z), 20 21, 40)
         
         COMBO(arrow, &arrow, 27 28, 45)
+        COMBO(not_equal, &not_equal, 6 7, 45)
+        COMBO(and, &kp PIPE, 4 5, 45)
+        COMBO(and, &kp AMPS, 5 6, 45)
+
+        COMBO(caps_word, &caps_word, 13 16, 45)
+        COMBO(caps_word, &caps_word, 6 7 8, 45)
 
         COMBO(left_par, &kp LPAR, 11 12, 30)
         COMBO(right_par, &kp RPAR, 12 13, 30)
@@ -88,7 +98,7 @@
         COMBO(par_pair_in, &par_pair_in, 11 12 13, 30)
 
         COMBO(left_brace, &kp LBRC, 1 2, 45)
-        COMBO(right_brace, &kp LBRC, 2 3, 45)
+        COMBO(right_brace, &kp RBRC, 2 3, 45)
         COMBO(brace_pair, &brace_pair, 1 3, 45)
         COMBO(brace_pair_in, &brace_pair_in, 1 2 3, 45)
 
@@ -103,8 +113,8 @@
         MACRO(par_pair, &kp LPAR &kp RPAR)
         MACRO(par_pair_in, &kp LPAR &kp RPAR &kp LARW)
         MACRO(brace_pair, &kp LBRC &kp RBRC)
-        MACRO(brace_pair_in, &kp LBRC &kp RBRC &kp LARW)
-        // TODO fix these
+        MACRO(brace_pair_in, &kp LBRC &kp SPACE &kp SPACE &kp RBRC &kp LARW &kp LARW)
+
         MACRO(swe_ao, &kp LA(A))
         MACRO(swe_ae, &um &kp A)
         MACRO(swe_oe, &um &kp O)
@@ -121,7 +131,7 @@
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
             &kp Z      &kp X      &kp C      &kp D      &kp V          &kp K      &kp H      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &lt 2 TAB   &kp SPACE     &kp ESC     &lt 1 BSPC
+                                             &lt 2 TAB &lt 2 SPACE     &lt 1 ESC  &lt 1 BSPC
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
