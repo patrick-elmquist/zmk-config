@@ -2,10 +2,8 @@
 // SPDX-License-Identifier: MIT
 
 // TODO
-// - Fix combos
 // - Fix system layer
 // - Give pinky shift a shot, but not right now
-// - Add caps word
 // - Add swe char combos
 // - Make alternative layouts togglable
 #include <behaviors.dtsi>
@@ -25,7 +23,7 @@
     timeout-ms = <TIMEOUT>; \
     bindings = <BINDINGS>; \
     key-positions = <KEYPOS>; \
-    layers = <0>; \
+    layers = <0 5>; \
   };
 
 #define MACRO(name, keys)                  \
@@ -191,10 +189,10 @@
            &sys_reset  &trans     &trans     &trans    &bt BT_SEL 0    &trans     &trans     &trans     &trans    &sys_reset
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│BOOTLOADER│          │          │          │PROFILE 1 │   │          │          │          │          │BOOTLOADER│
-          &bootloader  &trans     &trans     &trans    &bt BT_SEL 1    &trans     &trans     &trans     &trans    &bootloader
+          &bootloader  &trans     &trans     &trans    &bt BT_SEL 1    &tog 0     &trans     &trans     &trans    &bootloader
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │ CLEAR BT │PROFILE 2 │   │          │          │          │          │          │
-            &trans     &trans     &trans    &bt BT_CLR &bt BT_SEL 2    &trans     &trans     &trans     &trans     &trans
+            &trans     &trans     &trans    &bt BT_CLR &bt BT_SEL 2    &trans     &tog 5     &trans     &trans     &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
