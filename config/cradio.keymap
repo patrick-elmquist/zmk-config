@@ -93,6 +93,8 @@
         COMBO(single_quote, &kp SQT, 6 16, 45)
         COMBO(double_quote, &kp DQT, 16 26, 45)
 
+        COMBO(backslash, &kp BSLH, 7 18, 45)
+
         COMBO(left_par, &kp LPAR, 11 12, 30)
         COMBO(right_par, &kp RPAR, 12 13, 30)
         COMBO(par_pair, &par_pair, 11 13, 30)
@@ -132,7 +134,7 @@
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
             &kp Z      &kp X      &kp C      &kp D      &kp V          &kp K      &kp H      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &lt 2 TAB &lt 2 SPACE     &lt 1 ESC  &lt 1 BSPC
+                                             &lt 3 TAB &lt 2 SPACE     &lt 1 ESC  &lt 1 BSPC
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -168,13 +170,10 @@
         system_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  !       │  @       │  #       │  $       │          │   │  ^       │  &       │  *       │  (       │  )      │
-            &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT      &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR   &kp RPAR
+            &kp EXCL   &kp LG(W)  &kp HASH  &kp LG(ESC) &kp PRCNT      &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR   &kp RPAR
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │  `       │   │  +       │  -       │          │          │          │
-            &trans     &trans     &trans     &trans     &kp GRAVE      &kp PLUS   &kp MINUS  &trans     &trans     &trans
+            &trans    &kp C_PREV  &kp C_PP  &kp C_NEXT &kp LG(SPACE)   &kp PLUS   &kp MINUS  &trans     &trans     &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │  ~       │   │  =       │  _       │          │          │          │
             &trans     &trans     &trans     &trans     &kp TILDE      &kp EQUAL  &kp UNDER  &trans     &trans     &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &kp ENTER  &trans
