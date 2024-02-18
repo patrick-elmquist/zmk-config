@@ -81,7 +81,7 @@
 
     combos { 
         compatible = "zmk,combos";
-        COMBO(esc, &ht RG(RSHFT) ESC, 16 17, 50)
+        COMBO(esc, &ht RG(RSHFT) ESC, 16 17, 30)
         COMBO(eql, &kp EQUAL, 16 18, 40)
         COMBO(tab, &kp TAB, 17 18, 40)
         COMBO(copy, &kp LG(C), 21 22, 30)
