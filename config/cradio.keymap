@@ -61,16 +61,16 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        swp_app: swapper {
+        swp_win: swapper_win {
             compatible = "zmk,behavior-tri-state";
-            label = "SWAPPER";
+            label = "WINSWAP";
             #binding-cells = <0>;
             bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
         };
 
-        swp_win: swapper {
+        swp_app: swapper_app {
             compatible = "zmk,behavior-tri-state";
-            label = "SWAPPER";
+            label = "APPSWAP";
             #binding-cells = <0>;
             bindings = <&kt LGUI>, <&kp GRAVE>, <&kt LGUI>;
         };
