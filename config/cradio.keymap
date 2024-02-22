@@ -60,6 +60,20 @@
             bindings = <&kp LA(U)>, <&kp LA(U)>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        swp_app: swapper {
+            compatible = "zmk,behavior-tri-state";
+            label = "SWAPPER";
+            #binding-cells = <0>;
+            bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
+        };
+
+        swp_win: swapper {
+            compatible = "zmk,behavior-tri-state";
+            label = "SWAPPER";
+            #binding-cells = <0>;
+            bindings = <&kt LGUI>, <&kp GRAVE>, <&kt LGUI>;
+        };
     };
 
     conditional_layers {
@@ -177,9 +191,9 @@
         system_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-            &kp EXCL   &kp LG(W)  &kp HASH   &kp DLLR  &kp LG(ESC)      &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR   &kp RPAR
+            &kp EXCL   &kp LG(W)  &swp_win   &swp_app  &kp LG(ESC)      &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR   &kp RPAR
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-            &trans    &kp C_PREV  &kp C_PP  &kp C_NEXT &kp LG(SPACE)   &kp PLUS   &kp MINUS  &trans     &trans     &trans
+            &trans     &kp C_PREV &kp C_PP  &kp C_NEXT &kp LG(SPACE)   &kp PLUS   &kp MINUS  &trans     &trans     &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
             &trans     &trans     &trans     &trans     &kp TILDE      &kp EQUAL  &kp UNDER  &trans     &trans     &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
