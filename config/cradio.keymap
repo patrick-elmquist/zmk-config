@@ -13,7 +13,7 @@
 // Home row mods macro
 #define HRML(k1,k2,k3,k4) &ht LCTRL k1  &ht LALT k2  &ht LGUI k3  &ht LSHFT k4
 #define HRMR(k1,k2,k3,k4) &ht RSHIFT k1  &ht RGUI k2  &ht LALT k3  &ht RCTRL k4
-#define QUICK_TAP_MS 175
+#define QUICK_TAP_MS 125
 
 &caps_word {
     continue-list = <UNDERSCORE MINUS BACKSPACE>;
