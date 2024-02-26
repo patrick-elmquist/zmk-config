@@ -20,8 +20,8 @@
 };
 
 &lt {  // layer-tap config
-    flavor = "hold-preferred";
-    tapping-term-ms = <200>;
+    flavor = "balanced";
+    tapping-term-ms = <245>;
     quick-tap-ms = <QUICK_TAP_MS>;
 };
 
