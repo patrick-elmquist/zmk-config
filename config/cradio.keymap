@@ -13,14 +13,14 @@
 // Home row mods macro
 #define HRML(k1,k2,k3,k4) &ht LCTRL k1  &ht LALT k2  &ht LGUI k3  &ht LSHFT k4
 #define HRMR(k1,k2,k3,k4) &ht RSHIFT k1  &ht RGUI k2  &ht LALT k3  &ht RCTRL k4
-#define QUICK_TAP_MS 125
+#define QUICK_TAP_MS 150
 
 &caps_word {
     continue-list = <UNDERSCORE MINUS BACKSPACE>;
 };
 
 &lt {  // layer-tap config
-    flavor = "balanced";
+    flavor = "hold-preferred";
     tapping-term-ms = <200>;
     quick-tap-ms = <QUICK_TAP_MS>;
 };
