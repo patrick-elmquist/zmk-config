@@ -22,7 +22,7 @@
 &lt {  // layer-tap config
     flavor = "hold-preferred";
     tapping-term-ms = <200>;
-    quick-tap-ms = <QUICK_TAP_MS>;
+    quick-tap-ms = <200>;
 };
 
 #define COMBO(NAME, BINDINGS, KEYPOS, TIMEOUT) \
@@ -56,8 +56,11 @@
 
         lt_spc: layer_tap_space {
             flavor = "tap-preferred";
+            #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <QUICK_TAP_MS>;
+            require-prior-idle-ms = <125>;
+            bindings = <&kp>, <&kp>;
         };
 
         um: umlaut {
