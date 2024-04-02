@@ -20,7 +20,7 @@
 };
 
 &lt {  // layer-tap config
-    flavor = "tap-preferred";
+    flavor = "hold-preferred";
     tapping-term-ms = <200>;
     quick-tap-ms = <QUICK_TAP_MS>;
 };
@@ -52,6 +52,12 @@
             quick-tap-ms = <QUICK_TAP_MS>;
             require-prior-idle-ms = <80>;
             bindings = <&kp>, <&kp>;
+        };
+
+        lt_spc: layer_tap_space {
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <QUICK_TAP_MS>;
         };
 
         um: umlaut {
@@ -155,7 +161,7 @@
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
             &kp Z      &kp X      &kp C      &kp D      &kp V          &kp K      &kp H      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &lt 3 TAB &lt 2 SPACE     &lt 1 ESC  &lt 1 BSPC
+                                             &lt 3 TAB &lt_spc 2 SPACE     &lt 1 ESC  &lt 1 BSPC
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
