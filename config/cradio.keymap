@@ -225,7 +225,7 @@
         system_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-            &kp EXCL   &kp LG(W)  &swp_win   &swp_app  &kp LG(ESC)      &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR   &kp RPAR
+            &kp EXCL   &kp LG(W)  &swp_win   &swp_app  &kp LG(LS(B))   &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR   &kp RPAR
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
             &trans     &kp C_PREV &kp C_PP  &kp C_NEXT &kp LG(SPACE)   &kp PLUS   &kp MINUS  &trans     &trans     &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
