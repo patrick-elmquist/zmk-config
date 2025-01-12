@@ -38,6 +38,12 @@
 /*     quick-tap-ms = <200>; */
 /* }; */
 
+&lt {
+  flavor = "balanced";
+  tapping-term-ms = <200>;
+  quick-tap-ms = <QUICK_TAP_MS>;
+};
+
 #define COMBO(NAME, BINDINGS, KEYPOS, TIMEOUT) \
   combo_##NAME { \
     timeout-ms = <TIMEOUT>; \
@@ -66,6 +72,7 @@
             require-prior-idle-ms = <80>;
             bindings = <&kp>, <&kp>;
         };
+
         hrm_l: left_homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS_LEFT";
@@ -189,7 +196,7 @@
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
             &kp Z      &kp X      &kp C      &kp D      &kp V          &kp K      &kp H      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &lt 3 TAB &lt 2 SPACE     &lt 1 ESC  &lt 1 BSPC
+                                             &lt 3 TAB  &lt 2 SPC      &lt 1 ESC  &lt 1 BSPC
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
